@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "ipo-tracker-api-collection",
+		"name": "IPO Tracker API",
+		"description": "Complete API collection for the IPO Tracker Django application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "ipo-tracker"
+	},
+	"item": [
+		{
+			"name": "List All IPOs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/ipo/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"ipo",
+						""
+					]
+				},
+				"description": "Retrieve a paginated list of all IPOs with basic information."
+			},
+			"response": []
+		},
+		{
+			"name": "Get IPO Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/ipo/1/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"ipo",
+						"1",
+						""
+					]
+				},
+				"description": "Retrieve detailed information about a specific IPO."
+			},
+			"response": []
+		},
+		{
+			"name": "Filter IPOs by Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/ipo/?status=upcoming",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"ipo",
+						""
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "upcoming",
+							"description": "Filter by IPO status"
+						}
+					]
+				},
+				"description": "Filter IPOs by status (upcoming, ongoing, listed)."
+			},
+			"response": []
+		},
+		{
+			"name": "Search IPOs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/ipo/?search=TechCorp",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"ipo",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "TechCorp",
+							"description": "Search query for company name or price band"
+						}
+					]
+				},
+				"description": "Search IPOs by company name or price band."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Upcoming IPOs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/ipo/upcoming/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"ipo",
+						"upcoming",
+						""
+					]
+				},
+				"description": "Get all upcoming IPOs."
+			},
+			"response": []
+		},
+		{
+			"name": "Get IPO Performance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/ipo/1/performance/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"ipo",
+						"1",
+						"performance",
+						""
+					]
+				},
+				"description": "Get performance metrics for a specific IPO."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string",
+			"description": "Base URL for the IPO Tracker API"
+		}
+	]
+} 
